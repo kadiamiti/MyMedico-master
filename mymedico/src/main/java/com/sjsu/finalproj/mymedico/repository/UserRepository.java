@@ -255,10 +255,7 @@ public class UserRepository implements UserRepositoryInterface{
 			Statement statement = connection.createStatement();
 			resultSet = statement.executeQuery("Select * from recommender_data where email_id='"+request.getEmailId()+"'");
 			 while (resultSet.next()) {
-				 
-				 // Create the user object. 
 
-					System.out.println("Am I here ??");
 				 dbuser.setId(resultSet.getInt("id"));
 				 dbuser.setFirstName(resultSet.getString("first_name"));
 				 dbuser.setLastName(resultSet.getString("last_name"));
