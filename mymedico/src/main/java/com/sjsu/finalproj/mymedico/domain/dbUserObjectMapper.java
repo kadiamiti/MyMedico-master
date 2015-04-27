@@ -22,24 +22,24 @@ public class dbUserObjectMapper {
 		dbuserObj.setLastName(userObj.getLastName());
 		dbuserObj.setPwd(userObj.getPwd());
 		
-		if(userObj.getGender() == "Male" )
+		if(userObj.getGender().equalsIgnoreCase("Male"))
 			dbuserObj.setGender(1);
-		if(userObj.getGender() == "Female" )
+		if(userObj.getGender().equalsIgnoreCase("Female") )
 			dbuserObj.setGender(2);
 		
-		if(userObj.getRace() == "African Americans" )
+		if(userObj.getRace().equalsIgnoreCase("African Americans") )
 			dbuserObj.setRace(1);
-		if(userObj.getRace() == "Hispanics" )
+		if(userObj.getRace().equalsIgnoreCase("Hispanics" ))
 			dbuserObj.setRace(2);
-		if(userObj.getRace() == "Asians" )
+		if(userObj.getRace().equalsIgnoreCase("Asians") )
 			dbuserObj.setRace(3);
-		if(userObj.getRace() == "Caucasians" )
+		if(userObj.getRace().equalsIgnoreCase("Caucasians") )
 			dbuserObj.setRace(4);
-		if(userObj.getRace() == "Latin Americans" )
+		if(userObj.getRace().equalsIgnoreCase("Latin Americans") )
 			dbuserObj.setRace(5);
-		if(userObj.getRace() == "Native Americans" )
+		if(userObj.getRace().equalsIgnoreCase("Native Americans") )
 			dbuserObj.setRace(6);
-		if(userObj.getRace() == "Others" )
+		if(userObj.getRace().equalsIgnoreCase("Others") )
 			dbuserObj.setRace(7);
 		
 		
@@ -50,6 +50,8 @@ public class dbUserObjectMapper {
 		decimalHeight = (float) (decimalHeight + ((float)intHeight *30.48));
 		dbuserObj.setHeight(decimalHeight);
 		
+		
+	//	dbuserObj.setHeight(Float.parseFloat(userObj.getHeight()));
 		dbuserObj.setWeight(Float.parseFloat(userObj.getWeight()));
 		
 		
@@ -95,8 +97,10 @@ public class dbUserObjectMapper {
 		String caffeineHabits = userObj.getCaffeineHabits();		
 		dbuserObj.setCaffeineHabits(Integer.parseInt(caffeineHabits));
 		
-		String BPLevel = userObj.getBPLevel();		
-		dbuserObj.setBPLevel(Integer.parseInt(BPLevel));
+		String BPLevel = userObj.getBloodpressureLevel();	
+		dbuserObj.setBloodpressureLevel(Integer.parseInt(BPLevel));
+	//	String BPLevel = "1";
+	//	dbuserObj.setBPLevel(Integer.parseInt(BPLevel));
 		
 		
 		String cholestrolLevel = userObj.getCholestrolLevel();		
@@ -188,8 +192,8 @@ public class dbUserObjectMapper {
 		int caffeineHabits = dbuserObj.getCaffeineHabits();		
 		userObj.setCaffeineHabits(""+caffeineHabits);
 		
-		int BPLevel = dbuserObj.getBPLevel();		
-		userObj.setBPLevel(""+BPLevel);
+		int BPLevel = dbuserObj.getBloodpressureLevel();		
+		userObj.setBloodpressureLevel(""+BPLevel);
 		
 		
 		int cholestrolLevel = dbuserObj.getCholestrolLevel();		

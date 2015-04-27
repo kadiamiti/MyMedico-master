@@ -104,8 +104,22 @@ public class UserResource {
 	
 	
 
-	@GET
-	@Path("user/{emailId}")
+	@PUT
+	@Path("/user/{emailId}")
+	@Timed(name = "update-user-info")
+	public Response updateUserInfo(User request) {
+
+		int responseCode = userRepository.updateUserInfo(request);
+
+		if(responseCode == 200) {
+			return Response.status(200).build();
+		}
+		else {
+		return Response.status(501).build();
+		}
+	}
+	@POST
+	@Path("users")
 	@Timed(name = "get-user-info")
 	public Response getUserInfo(User request) {
 	

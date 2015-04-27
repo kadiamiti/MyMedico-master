@@ -33,7 +33,7 @@ public class dbUser {
 	private int smokingHabits;
 	private int drinkingHabits;
 	private int caffeineHabits;
-	private int BPLevel;
+	private int bloodpressureLevel;
 	private int cholestrolLevel;
 	private int sugarLevel;
 	private int haemoglobinContent;
@@ -133,12 +133,7 @@ public class dbUser {
 	public void setCaffeineHabits(int caffeineHabits) {
 		this.caffeineHabits = caffeineHabits;
 	}
-	public int getBPLevel() {
-		return BPLevel;
-	}
-	public void setBPLevel(int bPLevel) {
-		BPLevel = bPLevel;
-	}
+
 	public int getCholestrolLevel() {
 		return cholestrolLevel;
 	}
@@ -192,6 +187,12 @@ public class dbUser {
 	}
 	public void setWeight(float weight) {
 		this.weight = weight;
+	}
+	public int getBloodpressureLevel() {
+		return bloodpressureLevel;
+	}
+	public void setBloodpressureLevel(int bloodpressureLevel) {
+		this.bloodpressureLevel = bloodpressureLevel;
 	}
 
 }

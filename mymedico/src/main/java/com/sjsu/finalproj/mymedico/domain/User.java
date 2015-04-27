@@ -31,7 +31,7 @@ public class User {
 	private String smokingHabits;
 	private String drinkingHabits;
 	private String caffeineHabits;
-	private String BPLevel;
+	private String bloodpressureLevel;
 	private String cholestrolLevel;
 	private String sugarLevel;
 	private String haemoglobinContent;
@@ -139,12 +139,7 @@ public class User {
 	public void setCaffeineHabits(String caffeineHabits) {
 		this.caffeineHabits = caffeineHabits;
 	}
-	public String getBPLevel() {
-		return BPLevel;
-	}
-	public void setBPLevel(String bPLevel) {
-		BPLevel = bPLevel;
-	}
+
 	public String getCholestrolLevel() {
 		return cholestrolLevel;
 	}
@@ -192,6 +187,12 @@ public class User {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getBloodpressureLevel() {
+		return bloodpressureLevel;
+	}
+	public void setBloodpressureLevel(String bloodpressureLevel) {
+		this.bloodpressureLevel = bloodpressureLevel;
 	}
 
 }

@@ -36,9 +36,9 @@ public class UserRepository implements UserRepositoryInterface{
 		int id=0;
 		Random rand = new Random();
 		 id= rand.nextInt();
-		if(request.getGender() == "Male" )
+		if(request.getGender().equalsIgnoreCase("Male" ))
 			gender=1;
-		if(request.getGender() == "Female" )
+		if(request.getGender().equalsIgnoreCase("Female") )
 			gender=2;
 			
 		 try {
@@ -121,21 +121,18 @@ public class UserRepository implements UserRepositoryInterface{
 		
 		
 		String insertQueryString = "UPDATE `recommender_data` SET"+
-				"`first_name` = '"+dbuser.getFirstName()+"',"+
-				"`last_name` = '"+ dbuser.getLastName()+"',"+
-				"`email_id` = '"+ dbuser.getEmailId()+"',"+
-				"`pwd` = '"+ dbuser.getPwd()+"',"+
-				"`Gender` = "+dbuser.getGender()+","+
 				"`Race` = "+ dbuser.getRace()+","+
 				"`BMI` = "+ dbuser.getBmi()+","+
 				"`Age` = "+dbuser.getAge()+","+
+				"`Height` = "+dbuser.getHeight()+","+
+				"`Weight` = "+dbuser.getWeight()+","+				
 				"`Eating_Habits` = "+dbuser.getEatingHabits()+","+
 				"`Sleeping_Habits` = "+dbuser.getSleepingHabits()+","+
 				"`Activity_Level` = "+dbuser.getActivityLevel()+","+
 				"`Smoking_Habits` = "+ dbuser.getSmokingHabits()+","+
 				"`Drinking_Habits` ="+dbuser.getDrinkingHabits()+","+
 				"`Caffeine_Intake` ="+dbuser.getCaffeineHabits()+","+
-				"`BP_Level` = "+dbuser.getBPLevel()+","+
+				"`BP_Level` = "+dbuser.getBloodpressureLevel()+","+
 				"`Cholestrol_Level` = "+dbuser.getCholestrolLevel()+","+
 				"`Sugar_Level` = "+dbuser.getSugarLevel()+","+
 				"`Haemoglobin_Content` = "+dbuser.getHaemoglobinContent()+","+
@@ -143,7 +140,7 @@ public class UserRepository implements UserRepositoryInterface{
 				"`Family_Obesity` = "+ dbuser.getFamilyObesity()+","+
 				"`Family_Diabetes` ="+dbuser.getFamilyDiabetes()+","+ 
 				"`States` ='"+ dbuser.getStates()+"'"+
-				" WHERE "+ "`id` = "+ dbuser.getId();
+				" WHERE "+ "`email_id` = '"+ dbuser.getEmailId()+"'";
 		
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
@@ -186,21 +183,19 @@ public class UserRepository implements UserRepositoryInterface{
 		dbuser = dbuserobjectmapper.mapFromUserToDbUser(request);
 
 		String updateQueryString = "UPDATE `recommender_data` SET"+
-				"`first_name` = '"+dbuser.getFirstName()+"',"+
-				"`last_name` = '"+ dbuser.getLastName()+"',"+
-				"`email_id` = '"+ dbuser.getEmailId()+"',"+
-				"`pwd` = '"+ dbuser.getPwd()+"',"+
-				"`Gender` = "+dbuser.getGender()+","+
+
 				"`Race` = "+ dbuser.getRace()+","+
 				"`BMI` = "+ dbuser.getBmi()+","+
 				"`Age` = "+dbuser.getAge()+","+
+				"`Height` = "+dbuser.getHeight()+","+
+				"`Weight` = "+dbuser.getWeight()+","+
 				"`Eating_Habits` = "+dbuser.getEatingHabits()+","+
 				"`Sleeping_Habits` = "+dbuser.getSleepingHabits()+","+
 				"`Activity_Level` = "+dbuser.getActivityLevel()+","+
 				"`Smoking_Habits` = "+ dbuser.getSmokingHabits()+","+
 				"`Drinking_Habits` ="+dbuser.getDrinkingHabits()+","+
 				"`Caffeine_Intake` ="+dbuser.getCaffeineHabits()+","+
-				"`BP_Level` = "+dbuser.getBPLevel()+","+
+				"`BP_Level` = "+dbuser.getBloodpressureLevel()+","+
 				"`Cholestrol_Level` = "+dbuser.getCholestrolLevel()+","+
 				"`Sugar_Level` = "+dbuser.getSugarLevel()+","+
 				"`Haemoglobin_Content` = "+dbuser.getHaemoglobinContent()+","+
@@ -208,7 +203,7 @@ public class UserRepository implements UserRepositoryInterface{
 				"`Family_Obesity` = "+ dbuser.getFamilyObesity()+","+
 				"`Family_Diabetes` ="+dbuser.getFamilyDiabetes()+","+ 
 				"`States` ='"+ dbuser.getStates()+"'"+
-				" WHERE "+ "`id` = "+ dbuser.getId();
+				" WHERE "+ "`email_id` = '"+ request.getEmailId()+"'";
 		
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
@@ -241,6 +236,7 @@ public class UserRepository implements UserRepositoryInterface{
 
 	@Override
 	public User getUserInfo(User request) {
+		System.out.println("Am I here ??");
 		
 		dbUser dbuser = new dbUser();
 		dbUserObjectMapper dbuserobjectmapper = new dbUserObjectMapper();
@@ -257,35 +253,37 @@ public class UserRepository implements UserRepositoryInterface{
 		try {
 			Connection connection = DriverManager.getConnection(url + dbName, userName, password);	
 			Statement statement = connection.createStatement();
-			resultSet = statement.executeQuery("Select * from users where emailId='"+request.getEmailId()+"'");
+			resultSet = statement.executeQuery("Select * from recommender_data where email_id='"+request.getEmailId()+"'");
 			 while (resultSet.next()) {
 				 
 				 // Create the user object. 
 
+					System.out.println("Am I here ??");
 				 dbuser.setId(resultSet.getInt("id"));
-				 dbuser.setFirstName(resultSet.getString("firstName"));
-				 dbuser.setLastName(resultSet.getString("lastName"));
+				 dbuser.setFirstName(resultSet.getString("first_name"));
+				 dbuser.setLastName(resultSet.getString("last_name"));
+				 dbuser.setLastName(resultSet.getString("pwd"));
 				 dbuser.setEmailId(request.getEmailId());
-				 dbuser.setGender(resultSet.getInt("gender"));
-				 dbuser.setRace(resultSet.getInt("race"));
-				 dbuser.setHeight(resultSet.getFloat("height"));
-				 dbuser.setWeight(resultSet.getFloat("weight"));
-				 dbuser.setBmi(resultSet.getInt("bmi"));
-				 dbuser.setAge(resultSet.getInt("age"));
-				 dbuser.setEatingHabits(resultSet.getInt("eatingHabits"));
-				 dbuser.setSleepingHabits(resultSet.getInt("sleepingHabits"));
-				 dbuser.setActivityLevel(resultSet.getInt("activityLevel"));
-				 dbuser.setSmokingHabits(resultSet.getInt("smokingHabits"));
-				 dbuser.setDrinkingHabits(resultSet.getInt("drinkingHabits"));
-				 dbuser.setCaffeineHabits(resultSet.getInt("caffeineHabits"));
-				 dbuser.setBPLevel(resultSet.getInt("bpLevel"));
-				 dbuser.setCholestrolLevel(resultSet.getInt("cholestrolLevel"));
-				 dbuser.setSugarLevel(resultSet.getInt("sugarLevel"));
-				 dbuser.setHaemoglobinContent(resultSet.getInt("haemoglobinContent"));
-				 dbuser.setFamilyHypertension(resultSet.getInt("familyHypertension"));
-				 dbuser.setFamilyObesity(resultSet.getInt("familyObesity"));
-				 dbuser.setFamilyDiabetes(resultSet.getInt("familyDiabetes"));
-				 dbuser.setStates(resultSet.getString("states"));
+				 dbuser.setGender(resultSet.getInt("Gender"));
+				 dbuser.setRace(resultSet.getInt("Race"));
+				 dbuser.setHeight(resultSet.getFloat("Height"));
+				 dbuser.setWeight(resultSet.getFloat("Weight"));
+				 dbuser.setBmi(resultSet.getInt("BMI"));
+				 dbuser.setAge(resultSet.getInt("Age"));
+				 dbuser.setEatingHabits(resultSet.getInt("Eating_Habits"));
+				 dbuser.setSleepingHabits(resultSet.getInt("Sleeping_Habits"));
+				 dbuser.setActivityLevel(resultSet.getInt("Activity_Level"));
+				 dbuser.setSmokingHabits(resultSet.getInt("Smoking_Habits"));
+				 dbuser.setDrinkingHabits(resultSet.getInt("Drinking_Habits"));
+				 dbuser.setCaffeineHabits(resultSet.getInt("Caffeine_Intake"));
+				 dbuser.setBloodpressureLevel(resultSet.getInt("BP_Level"));
+				 dbuser.setCholestrolLevel(resultSet.getInt("Cholestrol_Level"));
+				 dbuser.setSugarLevel(resultSet.getInt("Sugar_Level"));
+				 dbuser.setHaemoglobinContent(resultSet.getInt("Haemoglobin_Content"));
+				 dbuser.setFamilyHypertension(resultSet.getInt("Family_Hypertension"));
+				 dbuser.setFamilyObesity(resultSet.getInt("Family_Obesity"));
+				 dbuser.setFamilyDiabetes(resultSet.getInt("Family_Diabetes"));
+				 dbuser.setStates(resultSet.getString("States"));
 				 
 				 
 				 
@@ -342,29 +340,30 @@ public class UserRepository implements UserRepositoryInterface{
 			 while (resultSet.next()) {
 				 
 				 dbuser.setId(resultSet.getInt("id"));
-				 dbuser.setFirstName(resultSet.getString("firstName"));
-				 dbuser.setLastName(resultSet.getString("lastName"));
+				 dbuser.setFirstName(resultSet.getString("first_name"));
+				 dbuser.setLastName(resultSet.getString("last_name"));
+				 dbuser.setLastName(resultSet.getString("pwd"));
 				 dbuser.setEmailId(request.getEmailId());
-				 dbuser.setGender(resultSet.getInt("gender"));
-				 dbuser.setRace(resultSet.getInt("race"));
-				 dbuser.setHeight(resultSet.getFloat("height"));
-				 dbuser.setWeight(resultSet.getFloat("weight"));
-				 dbuser.setBmi(resultSet.getInt("bmi"));
-				 dbuser.setAge(resultSet.getInt("age"));
-				 dbuser.setEatingHabits(resultSet.getInt("eatingHabits"));
-				 dbuser.setSleepingHabits(resultSet.getInt("sleepingHabits"));
-				 dbuser.setActivityLevel(resultSet.getInt("activityLevel"));
-				 dbuser.setSmokingHabits(resultSet.getInt("smokingHabits"));
-				 dbuser.setDrinkingHabits(resultSet.getInt("drinkingHabits"));
-				 dbuser.setCaffeineHabits(resultSet.getInt("caffeineHabits"));
-				 dbuser.setBPLevel(resultSet.getInt("bpLevel"));
-				 dbuser.setCholestrolLevel(resultSet.getInt("cholestrolLevel"));
-				 dbuser.setSugarLevel(resultSet.getInt("sugarLevel"));
-				 dbuser.setHaemoglobinContent(resultSet.getInt("haemoglobinContent"));
-				 dbuser.setFamilyHypertension(resultSet.getInt("familyHypertension"));
-				 dbuser.setFamilyObesity(resultSet.getInt("familyObesity"));
-				 dbuser.setFamilyDiabetes(resultSet.getInt("familyDiabetes"));
-				 dbuser.setStates(resultSet.getString("states"));
+				 dbuser.setGender(resultSet.getInt("Gender"));
+				 dbuser.setRace(resultSet.getInt("Race"));
+				 dbuser.setHeight(resultSet.getFloat("Height"));
+				 dbuser.setWeight(resultSet.getFloat("Weight"));
+				 dbuser.setBmi(resultSet.getInt("BMI"));
+				 dbuser.setAge(resultSet.getInt("Age"));
+				 dbuser.setEatingHabits(resultSet.getInt("Eating_Habits"));
+				 dbuser.setSleepingHabits(resultSet.getInt("Sleeping_Habits"));
+				 dbuser.setActivityLevel(resultSet.getInt("Activity_Level"));
+				 dbuser.setSmokingHabits(resultSet.getInt("Smoking_Habits"));
+				 dbuser.setDrinkingHabits(resultSet.getInt("Drinking_Habits"));
+				 dbuser.setCaffeineHabits(resultSet.getInt("Caffeine_Intake"));
+				 dbuser.setBloodpressureLevel(resultSet.getInt("BP_Level"));
+				 dbuser.setCholestrolLevel(resultSet.getInt("Cholestrol_Level"));
+				 dbuser.setSugarLevel(resultSet.getInt("Sugar_Level"));
+				 dbuser.setHaemoglobinContent(resultSet.getInt("Haemoglobin_Content"));
+				 dbuser.setFamilyHypertension(resultSet.getInt("Family_Hypertension"));
+				 dbuser.setFamilyObesity(resultSet.getInt("Family_Obesity"));
+				 dbuser.setFamilyDiabetes(resultSet.getInt("Family_Diabetes"));
+				 dbuser.setStates(resultSet.getString("States"));
 				 						 
 			 }
 		
@@ -375,7 +374,7 @@ public class UserRepository implements UserRepositoryInterface{
 		
 		recommendationObject.setDiabetesBand(dbuser.getSugarLevel());
 	 	recommendationObject.setObesityBand(dbuser.getBmi());
-		recommendationObject.setHyperTensionBand(dbuser.getBPLevel());
+		recommendationObject.setHyperTensionBand(dbuser.getBloodpressureLevel());
 		
 		// get from recommender db
 		
@@ -436,10 +435,10 @@ public class UserRepository implements UserRepositoryInterface{
 		float decimalHeight = height - (int)height;
 		float weight = 0;
 		
-		if(gender=="Female") {
+		if(gender.equalsIgnoreCase("Female")) {
 			weight = (float) (49 + (1.7 *decimalHeight));		
 		}
-		else if(gender == "Male") {
+		else if(gender.equalsIgnoreCase("Male")) {
 			weight = (float) (52 + (1.9 *decimalHeight));
 		}
 		weight = (float) (weight * 2.204);
@@ -448,11 +447,5 @@ public class UserRepository implements UserRepositoryInterface{
 		return request;
 	}
 	
-	public long generateIds() {
-		
-		
-		
-		return 0;
-	}
 
 }
