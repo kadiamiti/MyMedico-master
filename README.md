@@ -1,0 +1,2 @@
+# MyMedico
+Maven Java application

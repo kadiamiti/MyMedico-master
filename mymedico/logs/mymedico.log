@@ -1,0 +1,384 @@
+WARN  [2015-04-26 23:15:41,039] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-26 23:15:41,254] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-26 23:15:41,257] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-26 23:15:41,405] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-26 23:15:41,482] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-26 23:15:41,482] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-26 23:15:41,785] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-26 23:15:41,819] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:15:41,824] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:16:27,386] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:16:27,388] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:16:27,392] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-26 23:16:27,392] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:16:29,453] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:16:29,453] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-26 23:17:35,500] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-26 23:17:35,571] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-26 23:17:35,572] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-26 23:17:35,669] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-26 23:17:35,741] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-26 23:17:35,741] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-26 23:17:36,167] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-26 23:17:36,199] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:17:36,209] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:28:40,341] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:28:40,343] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:28:40,343] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-26 23:28:40,343] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:28:42,395] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:28:42,396] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-26 23:51:59,911] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-26 23:52:00,010] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-26 23:52:00,012] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-26 23:52:00,143] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-26 23:52:00,307] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-26 23:52:00,307] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-26 23:52:00,631] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-26 23:52:00,664] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:52:00,669] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:56:07,493] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-26 23:56:07,494] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:56:07,495] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-26 23:56:07,495] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:56:09,549] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-26 23:56:09,550] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-26 23:56:14,294] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-26 23:56:14,376] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-26 23:56:14,378] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-26 23:56:14,484] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-26 23:56:14,547] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account//login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account//register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account//user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-26 23:56:14,548] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-26 23:56:14,975] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-26 23:56:15,003] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-26 23:56:15,010] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:00:36,633] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:00:36,634] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:00:36,635] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 00:00:36,635] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:00:38,688] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:00:38,688] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 00:00:53,078] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 00:00:53,151] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 00:00:53,153] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-27 00:00:53,260] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 00:00:53,318] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account//login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account//register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account//user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 00:00:53,318] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 00:00:53,732] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 00:00:53,761] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:00:53,766] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:02:46,294] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:02:46,295] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:02:46,297] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 00:02:46,298] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:02:48,352] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:02:48,352] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 00:02:52,117] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 00:02:52,191] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 00:02:52,193] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-27 00:02:52,290] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 00:02:52,352] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 00:02:52,353] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 00:02:52,763] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 00:02:52,787] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:02:52,792] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:23:37,379] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:23:37,381] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:23:37,381] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 00:23:37,381] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:23:39,435] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:23:39,435] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 00:23:43,346] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 00:23:43,447] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 00:23:43,449] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-27 00:23:43,585] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 00:23:43,654] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 00:23:43,655] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 00:23:44,061] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 00:23:44,095] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:23:44,100] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:27:24,537] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:27:24,538] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:27:24,540] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 00:27:24,541] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:27:26,595] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:27:26,596] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 00:27:29,003] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 00:27:29,074] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 00:27:29,075] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-27 00:27:29,170] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 00:27:29,231] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 00:27:29,232] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 00:27:29,648] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 00:27:29,686] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:27:29,692] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:50:42,971] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 00:50:42,972] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:50:42,972] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 00:50:42,972] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:50:45,026] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 00:50:45,026] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 00:50:49,137] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 00:50:49,211] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 00:50:49,212] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2015-04-27 00:50:49,320] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 00:50:49,380] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 00:50:49,380] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 00:50:49,804] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 00:50:49,841] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 00:50:49,846] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 01:47:19,417] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2015-04-27 01:47:19,418] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 01:47:19,419] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2015-04-27 01:47:19,419] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 01:47:21,479] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/mitikadia/Documents/backup295/MyMedico-master/mymedico/target/classes/}
+INFO  [2015-04-27 01:47:21,480] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2015-04-27 02:10:19,147] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-04-27 02:10:19,200] com.yammer.dropwizard.cli.ServerCommand: Starting MyMedico-Service
+INFO  [2015-04-27 02:10:19,202] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2015-04-27 02:10:19,300] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2015-04-27 02:10:19,347] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /mymedico/v1/account/user/recommendation/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/login (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/register (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/bmicalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/idealweightcalculator (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    POST    /mymedico/v1/account/user/{emailId} (com.sjsu.finalproj.mymedico.api.resource.UserResource)
+    GET     /mymedico/v1/ (com.sjsu.finalproj.mymedico.api.resource.RootResource)
+
+INFO  [2015-04-27 02:10:19,347] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2015-04-27 02:10:19,547] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserInfo(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+  WARNING: A HTTP GET method, public javax.ws.rs.core.Response com.sjsu.finalproj.mymedico.api.resource.UserResource.getUserRecommendation(com.sjsu.finalproj.mymedico.domain.User), should not consume any entity.
+INFO  [2015-04-27 02:10:19,585] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2015-04-27 02:10:19,597] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
