@@ -119,7 +119,7 @@ public class UserResource {
 		
 	}
 	
-	@GET
+	@POST
 	@Path("user/recommendation/{emailId}")
 	@Timed(name = "get-user-recommendation")
 	public Response getUserRecommendation(User request) {
