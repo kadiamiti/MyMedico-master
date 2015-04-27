@@ -15,6 +15,7 @@ import com.sjsu.finalproj.mymedico.domain.User;
 import com.sjsu.finalproj.mymedico.domain.dbUser;
 import com.sjsu.finalproj.mymedico.domain.dbUserObjectMapper;
 import com.sjsu.finalproj.mymedico.recommender.Recommender;
+
 import java.util.Random;
 
 /**
@@ -245,6 +246,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String userName ="CMPE295B";
 		String password = "rememberme";
 		String dbName = "mitidb";
+
 		String driver = "com.mysql.jdbc.Driver";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -327,13 +329,14 @@ public class UserRepository implements UserRepositoryInterface{
 		String userName ="CMPE295B";
 		String password = "rememberme";
 		String dbName = "mitidb";
+		String dbName1 = "sharanyadb";
 		String driver = "com.mysql.jdbc.Driver";
 		ResultSet resultSet = null;
 
 		try {
 			Connection connection = DriverManager.getConnection(url + dbName, userName, password);	
 			Statement statement = connection.createStatement();
-			resultSet = statement.executeQuery("Select * from users where emailId='"+request.getEmailId()+"'");
+			resultSet = statement.executeQuery("Select * from recommender_data where email_id='"+request.getEmailId()+"'");
 			 while (resultSet.next()) {
 				 
 				 dbuser.setId(resultSet.getInt("id"));
@@ -381,16 +384,16 @@ public class UserRepository implements UserRepositoryInterface{
 		  String jdbc_driver="com.mysql.jdbc.Driver"; 
 		  Connection connection;
 		try {
-			connection = DriverManager.getConnection(url , userName, password);
+			connection = DriverManager.getConnection(jdbc_url ,  jdbc_username, jdbc_password);
 			  Statement statement1 = connection.createStatement();
-				resultSet = statement1.executeQuery("Select * from recommender where id='"+recommendationId+"'");
+				resultSet = statement1.executeQuery("Select * from recommend where id='"+recommendationId+"'");
 				 while (resultSet.next()) {
 					 
-					 dbuser.setId(resultSet.getInt("id"));
-					 recommendationObject.setDiabetes(resultSet.getInt("daibetese"));
+					
 					 recommendationObject.setObesity(resultSet.getInt("obesity"));
 					 recommendationObject.setHyperTension(resultSet.getInt("hypertension"));
 					 recommendationObject.setHealthyProfile(resultSet.getInt("healthy"));
+					 recommendationObject.setDiabetes(resultSet.getInt("diabetese"));
 					
 					 						 
 				 }
@@ -416,8 +419,16 @@ public class UserRepository implements UserRepositoryInterface{
 		float weight = Float.parseFloat(request.getWeight());
 		float height = Float.parseFloat(request.getHeight());
 		
+		float decimalHeight = height - (int)height;
+		int intHeight = (int)height;
+		decimalHeight = (float) ((decimalHeight * 10) + ((float)intHeight * 12));
+		
+		decimalHeight = (float) (decimalHeight *0.025);
+		weight = (float) (weight * 0.45);
+		
+		
 		float bmi;
-		bmi = (weight)/(height*height) * 703 ;
+		bmi = (weight)/(decimalHeight*decimalHeight) ;
 		request.setBmi(""+ bmi);
 		return request;
 	}
@@ -427,15 +438,33 @@ public class UserRepository implements UserRepositoryInterface{
 		// TODO Auto-generated method stub
 		//52 kg + 1.9 kg per inch over 5 feet       (man)
 		//49 kg + 1.7 kg per inch over 5 feet       (woman)
+		Boolean flag=true;
 		String gender = request.getGender();
 		float height = Float.parseFloat(request.getHeight());
 		float decimalHeight = height - (int)height;
-		float weight = 0;
+		int intHeight = (int)height;
+		decimalHeight = (float) ((decimalHeight * 10) + ((float)intHeight * 12));
 		
-		if(gender.equalsIgnoreCase("Female")) {
+		if(decimalHeight > 60){
+			decimalHeight = decimalHeight - 60;
+		}
+		else {
+			flag=false;
+		}
+		
+		
+		float weight = 0;
+		if (gender.equalsIgnoreCase("Female")) {
+			weight = (float) (49 );
+		}
+		if (gender.equalsIgnoreCase("Male")) {
+			weight = (float) (52);
+		}
+		
+		if(gender.equalsIgnoreCase("Female") && flag) {
 			weight = (float) (49 + (1.7 *decimalHeight));		
 		}
-		else if(gender.equalsIgnoreCase("Male")) {
+		else if(gender.equalsIgnoreCase("Male") && flag) {
 			weight = (float) (52 + (1.9 *decimalHeight));
 		}
 		weight = (float) (weight * 2.204);

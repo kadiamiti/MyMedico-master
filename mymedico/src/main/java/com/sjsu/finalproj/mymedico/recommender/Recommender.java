@@ -9,26 +9,32 @@ import java.util.Scanner;
 
 public class Recommender {
 	 public static String jdbc_url="jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com/sharanyadb";
+	 public static String jdbc_url1="jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com/mitidb";
 	  public static String jdbc_username="CMPE295B"; 
 	  public static  String jdbc_password="rememberme";
 	  public static String jdbc_driver="com.mysql.jdbc.Driver"; 
 	
 	public int recommender_function(String email_id) throws Exception	{
 		 Class.forName(jdbc_driver);
-		 Connection con=DriverManager.getConnection(jdbc_url, jdbc_username,jdbc_password);
+		 Connection con=DriverManager.getConnection(jdbc_url1, jdbc_username,jdbc_password);
+		 Connection con1=DriverManager.getConnection(jdbc_url, jdbc_username,jdbc_password);
 		 Statement stmt = null;
 		 stmt = con.createStatement();
 		 Statement stmt1 = null;
-		 stmt1 = con.createStatement();
-		 Scanner scan = new Scanner(System.in);
-		 int j = scan.nextInt();
+		 stmt1 = con1.createStatement();
+	//	 Scanner scan = new Scanner(System.in);
+	//	 int j = scan.nextInt();
+	
 		 int min =Integer.MAX_VALUE;
    	  	 int id = Integer.MAX_VALUE;
-		  ResultSet rs = stmt.executeQuery("select BMI,Age,Eating_Habits,Sleeping_Habits,Activity_Level,Smoking_Habits,Drinking_Habits,Caffeine_Intake,BP_Level,Cholestrol_Level,Sugar_Level,Haemoglobin_Content,Family_Hypertension,Family_Obesity,Family_Diabetes from recommender_data where email_id = "+email_id);
-    	  rs.next();
+   	  	 System.out.println("Am I here ? 1");
+		  ResultSet rs = stmt.executeQuery("select BMI,Age,Eating_Habits,Sleeping_Habits,Activity_Level,Smoking_Habits,Drinking_Habits,Caffeine_Intake,BP_Level,Cholestrol_Level,Sugar_Level,Haemoglobin_Content,Family_Hypertension,Family_Obesity,Family_Diabetes from recommender_data where email_id = '"+email_id+"'");
+		  System.out.println("Am I here ? 2");
+		  rs.next();
     	  rs.getInt("BMI");
     	  int mean_array[][] = new int[4][3];
     	  int mean_array_sort[][] = new int[4][3];
+    	  System.out.println("Am I here ? 3");
     	  for(int i=0;i<4;i++)	{
     		  ResultSet rs1 = stmt1.executeQuery("select BMI,Age,Eating_Habits,Sleeping_Habits,Activity_Level,Smoking_Habits,Drinking_Habits,Caffeine_Intake,BP_Level,Cholestrol_Level,Sugar_Level,Haemoglobin_Content,Family_Hypertension,Family_Obesity,Family_Diabetes from centroids where id = "+i);
         	  rs1.next();
@@ -61,7 +67,7 @@ public class Recommender {
     		  }
     	  }
     	
-    	  
+    	  System.out.println("Am I here ? 4");
     	  int row_count =0,priority = 1;
     	  while(mean_array_sort[row_count][1] != 4)	{
     		  mean_array_sort[row_count][2] = priority;
@@ -95,13 +101,15 @@ public class Recommender {
     	  int recommender_id=0;
     	  Random rand = new Random();
     	  recommender_id= rand.nextInt();
-    	  Statement stmt2 = con.createStatement();
-    	  stmt2.executeUpdate("insert into sharanyadb.recommend(id,email_id,diabetese,hypertension,obesity,healthy) values("+recommender_id+"'"+email_id+"',"+mean_array[0][2]+","+mean_array[2][2]+","+mean_array[1][2]+","+mean_array[3][2]+")");
+    	  Statement stmt2 = con1.createStatement();
+    	  System.out.println("Recommender id is: "+recommender_id);
+    	  System.out.println("Am I here ? 5");
+    	  stmt2.executeUpdate("Insert into recommend(id,email_id,diabetese,hypertension,obesity,healthy) values("+recommender_id+",'"+email_id+"',"+mean_array[0][2]+","+mean_array[2][2]+","+mean_array[1][2]+","+mean_array[3][2]+")");
     	//  id++;
     	  //ResultSet rs2 = stmt.executeQuery("select recommend from recommendation where id = "+id);
     	  //rs2.next();
     	  //System.out.println(rs2.getString("recommend"));
-    	
+    	  System.out.println("Am I here ? 6");
     	  return recommender_id;
 	}
 }

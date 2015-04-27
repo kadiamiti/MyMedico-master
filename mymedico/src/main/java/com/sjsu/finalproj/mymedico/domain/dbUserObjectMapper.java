@@ -42,16 +42,16 @@ public class dbUserObjectMapper {
 		if(userObj.getRace().equalsIgnoreCase("Others") )
 			dbuserObj.setRace(7);
 		
-		
+/*		
 		float height = Float.parseFloat(userObj.getHeight());
 		float decimalHeight = height - (int)height;
 		int intHeight = (int)height;
 		decimalHeight = (float) (decimalHeight * 2.54);
 		decimalHeight = (float) (decimalHeight + ((float)intHeight *30.48));
-		dbuserObj.setHeight(decimalHeight);
+		dbuserObj.setHeight(decimalHeight);*/
 		
 		
-	//	dbuserObj.setHeight(Float.parseFloat(userObj.getHeight()));
+		dbuserObj.setHeight(Float.parseFloat(userObj.getHeight()));
 		dbuserObj.setWeight(Float.parseFloat(userObj.getWeight()));
 		
 		
@@ -160,10 +160,10 @@ public class dbUserObjectMapper {
 		
 		
 		float height = dbuserObj.getHeight();
-		float decimalHeight = height - (int)height;
+/*		float decimalHeight = height - (int)height;
 		int intHeight = (int)height;
 		decimalHeight = (float) (decimalHeight * 2.54);
-		decimalHeight = (float) (decimalHeight + ((float)intHeight *30.48));
+		decimalHeight = (float) (decimalHeight + ((float)intHeight *30.48));*/
 		userObj.setHeight(""+height);
 		
 		userObj.setWeight(""+dbuserObj.getWeight());
