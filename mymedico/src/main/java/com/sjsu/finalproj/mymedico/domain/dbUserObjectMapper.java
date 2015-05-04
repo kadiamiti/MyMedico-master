@@ -8,6 +8,12 @@ import com.sjsu.finalproj.mymedico.domain.dbUser;
  * @author mitikadia
  *
  *Map the user object with the db user object and vice versa
+ *0-2 infant
+ *3-12 junior
+ *13-19 young adult
+ *20-50 adult
+ *51-75 senior
+ *75+ Elderly
  */
 public class dbUserObjectMapper {
 	
@@ -26,7 +32,7 @@ public class dbUserObjectMapper {
 			dbuserObj.setGender(1);
 		if(userObj.getGender().equalsIgnoreCase("Female") )
 			dbuserObj.setGender(2);
-		
+		System.out.println("check1");
 		if(userObj.getRace().equalsIgnoreCase("African Americans") )
 			dbuserObj.setRace(1);
 		if(userObj.getRace().equalsIgnoreCase("Hispanics" ))
@@ -41,7 +47,7 @@ public class dbUserObjectMapper {
 			dbuserObj.setRace(6);
 		if(userObj.getRace().equalsIgnoreCase("Others") )
 			dbuserObj.setRace(7);
-		
+		System.out.println("check2");
 /*		
 		float height = Float.parseFloat(userObj.getHeight());
 		float decimalHeight = height - (int)height;
@@ -51,10 +57,12 @@ public class dbUserObjectMapper {
 		dbuserObj.setHeight(decimalHeight);*/
 		
 		
+		
+		System.out.println("check3");
 		dbuserObj.setHeight(Float.parseFloat(userObj.getHeight()));
 		dbuserObj.setWeight(Float.parseFloat(userObj.getWeight()));
 		
-		
+		System.out.println("check4");
 		float tempBMI =0;
 		int tempdbBMI=0;
 		tempBMI = Float.parseFloat(userObj.getBmi());
@@ -79,7 +87,7 @@ public class dbUserObjectMapper {
 		dbuserObj.setEatingHabits(Integer.parseInt(userObj.getEatingHabits()));
 		
 		
-		//
+		System.out.println("check5");
 		
 		String stringSleeping = userObj.getSleepingHabits();		
 		dbuserObj.setSleepingHabits(Integer.parseInt(stringSleeping));
@@ -93,7 +101,7 @@ public class dbUserObjectMapper {
 		String drinkingHabits = userObj.getDrinkingHabits();		
 		dbuserObj.setDrinkingHabits(Integer.parseInt(drinkingHabits));
 
-		
+		System.out.println("check6");
 		String caffeineHabits = userObj.getCaffeineHabits();		
 		dbuserObj.setCaffeineHabits(Integer.parseInt(caffeineHabits));
 		
@@ -105,7 +113,7 @@ public class dbUserObjectMapper {
 		
 		String cholestrolLevel = userObj.getCholestrolLevel();		
 		dbuserObj.setCholestrolLevel(Integer.parseInt(cholestrolLevel));
-		
+		System.out.println("check7");
 		String sugarLevel = userObj.getSugarLevel();		
 		dbuserObj.setSugarLevel(Integer.parseInt(sugarLevel));
 		
@@ -114,7 +122,7 @@ public class dbUserObjectMapper {
 		
 		String familyHypertension = userObj.getFamilyHypertension();		
 		dbuserObj.setFamilyHypertension(Integer.parseInt(familyHypertension));
-		
+		System.out.println("check8");
 		String familyObesity = userObj.getFamilyObesity();		
 		dbuserObj.setFamilyObesity(Integer.parseInt(familyObesity));
 		
@@ -123,7 +131,7 @@ public class dbUserObjectMapper {
 		
 		dbuserObj.setStates(userObj.getStates());
 			
-		
+		System.out.println("check9");
 		return dbuserObj;
 	}
 

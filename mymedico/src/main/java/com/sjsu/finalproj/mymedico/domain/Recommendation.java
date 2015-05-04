@@ -22,11 +22,13 @@ public class Recommendation {
 	private int obesity;
 	private int hyperTension;
 	private int healthyProfile;
+	private int unhealthyProfile;
 	
 	private int diabetesBand;
-	private float obesityBand;
+	private int obesityBand;
 	private int hyperTensionBand;
 	private int healthyProfileBand;
+	private int unhealthyProfileBand;
 	
 	public long getRecommendation_id() {
 		return recommendation_id;
@@ -91,8 +93,28 @@ public class Recommendation {
 	}
 
 
-	public void setObesityBand(float f) {
+	public void setObesityBand(int f) {
 		this.obesityBand = f;
+	}
+
+
+	public int getUnhealthyProfile() {
+		return unhealthyProfile;
+	}
+
+
+	public void setUnhealthyProfile(int unhealthyProfile) {
+		this.unhealthyProfile = unhealthyProfile;
+	}
+
+
+	public int getUnhealthyProfileBand() {
+		return unhealthyProfileBand;
+	}
+
+
+	public void setUnhealthyProfileBand(int unhealthyProfileBand) {
+		this.unhealthyProfileBand = unhealthyProfileBand;
 	}
 
 	

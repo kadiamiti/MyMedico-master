@@ -20,22 +20,9 @@ import com.sjsu.finalproj.mymedico.dto.UserDto;
 import com.sjsu.finalproj.mymedico.repository.UserRepositoryInterface;
 import com.yammer.metrics.annotation.Timed;
 
-
-
-
-
 /**
  * @author mitikadia
  * 
- * register
- * login
- * logout
- * submitMedicalDetails
- * updateMedicalDetails
- * dashboard , newsfeed
- * getMedicalStats
- * getGeneralStats
- * getStateStats
  *  
  */
 
@@ -60,8 +47,11 @@ public class UserResource {
 		if(responseCode == 200) {
 			return Response.status(200).build();
 		}
+		else if(responseCode == 501) {
+			return Response.status(501).build();
+		}
 		else {
-		return Response.status(501).build();
+		return Response.status(500).build();
 		}
 	}
 	
@@ -82,7 +72,7 @@ public class UserResource {
 			return Response.status(200).build();
 		}
 		else {
-		return Response.status(501).build();
+		return Response.status(500).build();
 		}
 	}
 	

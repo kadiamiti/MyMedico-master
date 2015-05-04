@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
 import com.sjsu.finalproj.mymedico.domain.Recommendation;
@@ -31,7 +32,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
+		String dbName = "MedDB";
 		String driver = "com.mysql.jdbc.Driver";
 		int gender = 0;
 		int id=0;
@@ -57,9 +58,9 @@ public class UserRepository implements UserRepositoryInterface{
 						"`pwd`,`Gender`) " + "VALUES ("+id+", '"+request.getFirstName()+"', '"+request.getLastName()+"', '"+request.getEmailId()+"', '"+request.getPwd()+"','"+gender+"')");
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			return 501;
 		}
-	
+		
 		
 		return 200;
 	}
@@ -69,7 +70,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
+		String dbName = "MedDB";
 		String driver = "com.mysql.jdbc.Driver";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -146,7 +147,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
+		String dbName = "MedDB";
 		String driver = "com.mysql.jdbc.Driver";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -209,7 +210,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
+		String dbName = "MedDB";
 		String driver = "com.mysql.jdbc.Driver";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -237,7 +238,7 @@ public class UserRepository implements UserRepositoryInterface{
 
 	@Override
 	public User getUserInfo(User request) {
-		System.out.println("Am I here ??");
+		
 		
 		dbUser dbuser = new dbUser();
 		dbUserObjectMapper dbuserobjectmapper = new dbUserObjectMapper();
@@ -245,7 +246,7 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
+		String dbName = "MedDB";
 
 		String driver = "com.mysql.jdbc.Driver";
 		PreparedStatement preparedStatement = null;
@@ -328,8 +329,8 @@ public class UserRepository implements UserRepositoryInterface{
 		String url = "jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com:3306/";
 		String userName ="CMPE295B";
 		String password = "rememberme";
-		String dbName = "mitidb";
-		String dbName1 = "sharanyadb";
+		String dbName = "MedDB";
+		String dbName1 = "MedDB";
 		String driver = "com.mysql.jdbc.Driver";
 		ResultSet resultSet = null;
 
@@ -378,7 +379,7 @@ public class UserRepository implements UserRepositoryInterface{
 		
 		// get from recommender db
 		
-		  String jdbc_url="jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com/sharanyadb";
+		  String jdbc_url="jdbc:mysql://meddbinstance.cozrev6gggap.us-west-1.rds.amazonaws.com/MedDB";
 		  String jdbc_username="CMPE295B"; 
 		  String jdbc_password="rememberme";
 		  String jdbc_driver="com.mysql.jdbc.Driver"; 
@@ -394,15 +395,35 @@ public class UserRepository implements UserRepositoryInterface{
 					 recommendationObject.setHyperTension(resultSet.getInt("hypertension"));
 					 recommendationObject.setHealthyProfile(resultSet.getInt("healthy"));
 					 recommendationObject.setDiabetes(resultSet.getInt("diabetese"));
-					
-					 						 
+					 recommendationObject.setUnhealthyProfile(resultSet.getInt("unhealthy"));
+					 					 						 
 				 }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		  
+		if ( recommendationObject.getHealthyProfile() == 1) {
+			recommendationObject.setDiabetesBand(0);
+		 	recommendationObject.setObesityBand(0);
+			recommendationObject.setHyperTensionBand(0);
+			recommendationObject.setObesity(0);
+			recommendationObject.setHyperTension(0);
+			recommendationObject.setDiabetes(0);
+			recommendationObject.setUnhealthyProfile(0);
+		}
 		
+		if ( recommendationObject.getDiabetes() == 0) {
+			recommendationObject.setDiabetesBand(0);
+		}
+		
+		if ( recommendationObject.getHyperTension() == 0) {
+			recommendationObject.setHyperTensionBand(0);
+		}
+		
+		if ( recommendationObject.getObesity() == 0) {
+			recommendationObject.setObesityBand(0);
+		}
 		
 		return recommendationObject;
 	}
