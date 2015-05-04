@@ -8,15 +8,11 @@ package com.sjsu.finalproj.mymedico.dto;
  *
  */
 
-import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.sjsu.finalproj.mymedico.domain.User;
 
 @JsonPropertyOrder(alphabetic = true)
 public class UserDto {
-	
-	
-	
 	
 	public UserDto(User user) {
 		super();

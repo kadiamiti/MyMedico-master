@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 
 import com.sjsu.finalproj.mymedico.domain.Recommendation;
 import com.sjsu.finalproj.mymedico.domain.User;
-import com.sjsu.finalproj.mymedico.dto.UserDto;
+import com.sjsu.finalproj.mymedico.dto.*;
 import com.sjsu.finalproj.mymedico.repository.UserRepositoryInterface;
 import com.yammer.metrics.annotation.Timed;
 
@@ -129,8 +129,9 @@ public class UserResource {
 	public Response getUserRecommendation(User request) {
 		// Store the new book in the BookRepository so that we can retrieve it.
 		Recommendation response = userRepository.getUserRecommendation(request);
-		
-		return Response.status(200).entity(response).build();
+		RecommendationDto recommendationResponse = new RecommendationDto(response);
+			
+		return Response.status(200).entity(recommendationResponse).build();
 		
 	}
 	
